@@ -1,5 +1,8 @@
 public class Demo01 {
     public static void main(String[] args) {
-        new OrderService().checkout("a@shop.com", 100.0);
+        TaxCalculator taxCalculator = new TaxCalculator(0.18);
+        Notification notification = new EmailClient();
+        OrderService oService = new OrderService(taxCalculator, notification);
+        oService.checkout("a@shop.com", 100.0);
     }
 }

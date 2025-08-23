@@ -1,14 +1,19 @@
 public class OrderService {
-    double taxRate = 0.18;
-    EmailClient email = new EmailClient();
-
-    double totalWithTax(double subtotal) {
-        return subtotal + subtotal * taxRate;
+    TaxCalculator taxCalculator;
+    Notification notification;
+    public OrderService(TaxCalculator taxCalculator, Notification notification) {
+        this.taxCalculator = taxCalculator;
+        this.notification = notification;
     }
+
     void checkout(String customerEmail, double subtotal) {
-        double total = totalWithTax(subtotal);
-        email.send(customerEmail, "Thanks! Your total is " + total);
+        //SRP Violation: OrderService is doing 3 things here
+        //1. Calculating tax
+        //2. Sending email
+        //3. Storing order (pretend DB)
+        double total = taxCalculator.totalWithTax(subtotal);
+        notification.send(customerEmail, "Thanks! Your total is " + total);
         System.out.println("Order stored (pretend DB).");
-        //SRP violation: storing order is another responsibility
+        
     }
 }
