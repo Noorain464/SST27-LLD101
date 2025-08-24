@@ -1,0 +1,3 @@
+interface Rechargable {
+    void recharge();
+}
