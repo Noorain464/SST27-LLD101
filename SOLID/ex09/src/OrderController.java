@@ -5,6 +5,7 @@ public class OrderController {
     }
     void create(String id){
         // SqlOrderRepository repo = new SqlOrderRepository(); // hard dependency
+        //DIP violation if we instantiate SqlOrderRepository here
         repo.save(id);
         System.out.println("Created order: " + id);
     }
