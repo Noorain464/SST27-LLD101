@@ -1,7 +1,8 @@
 public class Demo07 {
     public static void main(String[] args) {
-        Machine m = new BasicPrinter();
+        Printer m = new BasicPrinter();
+        Scanner s = new BasicPrinter();
         m.print("Hello");
-        m.scan("/tmp/out"); // blows up
+        s.scan("/tmp/out"); // blows up
     }
 }
