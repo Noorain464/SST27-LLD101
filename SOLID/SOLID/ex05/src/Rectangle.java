@@ -1,0 +1,7 @@
+public class Rectangle implements Shape {
+    int w,h;
+    public Rectangle(int w, int h){ this.w = w; this.h = h; }
+    void setWidth(int w){ this.w = w; }
+    void setHeight(int h){ this.h = h; }
+    public int area(){ return w*h; }
+}
