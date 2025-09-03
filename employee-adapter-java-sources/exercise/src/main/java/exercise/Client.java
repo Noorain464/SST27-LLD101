@@ -1,4 +1,4 @@
-package exercise;
+// package exercise;
 
 import java.util.*;
 
@@ -16,13 +16,14 @@ public class Client {
     );
 
     List<EmployeeLDAP> ldapRows = List.of(
-      new EmployeeLDAP(Map.of("uid","301","givenName","Wei","sn","Zhang","mail","wei.zhang@example.org")),
-      new EmployeeLDAP(Map.of("uid","302","givenName","Elena","sn","Garcia","mail","elena.garcia@example.org"))
+      new EmployeeLDAP(Map.of("uid", "301", "givenName", "Wei", "sn", "Zhang", "mail", "wei.zhang@example.org")),
+      new EmployeeLDAP(Map.of("uid", "302", "givenName", "Elena", "sn", "Garcia", "mail", "elena.garcia@example.org"))
     );
 
-    // TODO: Wrap each legacy object with the right adapter and collect into one list
     List<Employee> all = new ArrayList<>();
-
+    csvRows.forEach(csv -> all.add(new EmployeeCSVAdapter(csv)));
+    dbRows.forEach(db -> all.add(new EmployeeDBWrapper(db)));
+    ldapRows.forEach(ldap -> all.add(new EmployeeLDAPWrapper(ldap)));
 
     EmployeePrinter.print(all);
   }
