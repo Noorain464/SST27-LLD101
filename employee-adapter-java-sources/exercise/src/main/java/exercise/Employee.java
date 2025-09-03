@@ -1,5 +1,5 @@
-package exercise;
 
+// package exercise;
 public interface Employee {
   String getId();
   String getFirstName();

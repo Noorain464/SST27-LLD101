@@ -1,8 +1,8 @@
-package exercise;
 
+// package exercise;
 import java.util.Objects;
 
-public final class EmployeeCSV {
+public final class EmployeeCSV{
   private final String csvRow;
   public EmployeeCSV(String csvRow) { this.csvRow = Objects.requireNonNull(csvRow); }
   public String getCsvRow() { return csvRow; }
