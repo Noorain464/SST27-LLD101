@@ -2,6 +2,7 @@ package com.example.notifications;
 
 public class SlackDecorator extends BaseDecorator {
     private final String channel;
+  
     public SlackDecorator(Notifier notifier, String channel) {
         super(notifier);
         this.channel=channel;
@@ -9,7 +10,7 @@ public class SlackDecorator extends BaseDecorator {
 
     @Override
     public void notify(String text) {
-        super.notify(text);
+        notifier.notify(text);
         System.out.println("[SLACK]: " + text + " to channel " + channel);
     }
 }

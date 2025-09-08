@@ -8,7 +8,7 @@ public class SmsDecorator extends BaseDecorator {
     }
     @Override
     public void notify(String text) {
-        super.notify(text);
+        notifier.notify(text);
         System.out.println("[SMS]: " + text + " to " + phone);
     }
 }
