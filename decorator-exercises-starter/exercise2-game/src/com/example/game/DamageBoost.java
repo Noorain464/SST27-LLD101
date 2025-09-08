@@ -14,12 +14,12 @@ public class DamageBoost extends CharacterDecorator {
 
     @Override
     public int getDamage() {
-        return super.getDamage() + damageAmount;
+        return character.getDamage() + damageAmount;
     }
 
     @Override
     public String getSprite() {
-        return super.getSprite() + " with Damage Boost";
+        return character.getSprite() + " with Damage Boost";
     }
     
 }

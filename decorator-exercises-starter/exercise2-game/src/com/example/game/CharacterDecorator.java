@@ -1,7 +1,7 @@
 package com.example.game;
 
 public class CharacterDecorator implements Character{
-    private final Character character;
+    Character character;
     public CharacterDecorator(Character character) {
         this.character = character;
     }

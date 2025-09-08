@@ -14,12 +14,12 @@ public class SpeedBoost extends CharacterDecorator {
 
     @Override
     public int getSpeed() {
-        return super.getSpeed() + boostAmount;
+        return character.getSpeed() + boostAmount;
     }
 
     @Override
     public String getSprite() {
-        return super.getSprite() + " with Speed Boost";
+        return character.getSprite() + " with Speed Boost";
     }
     
 }
